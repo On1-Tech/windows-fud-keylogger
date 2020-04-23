@@ -1,8 +1,10 @@
 #pragma once
+#include "pch.h"
 
 class logging {
 public:
-	virtual bool log(const char c) = 0;
+	logging();
+	virtual bool log(const wchar_t& c) = 0;
 	virtual bool log(const std::string& str) = 0;
-	virtual ~logging() = 0; 
+	virtual ~logging() = default; 
 };

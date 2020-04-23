@@ -1,6 +1,6 @@
 #pragma once
-#include 'pch.h'
-#include '../log.h'
+#include "pch.h"
+#include "../log.h"
 
 class logFILE : public logging {
 private:
@@ -10,6 +10,6 @@ private:
 public:
 	logFILE(const std::string& logFileName);
 	~logFILE() override;
-	bool log(const char c) override;
+	bool log(const wchar_t& c) override;
 	bool log(const std::string& str) override;
 };

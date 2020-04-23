@@ -27,10 +27,10 @@
     <ClCompile Include="log\logFILE\file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keyscan\keyfilters.cpp">
+    <ClCompile Include="keyscan\keyscan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keyscan\keyscan.cpp">
+    <ClCompile Include="keyscan\keyfilters_GERMAN-QWERTZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,7 +1,7 @@
-#include 'pch.h'
-#include 'file.h'
+#include "pch.h"
+#include "file.h"
 
-bool logFILE::log(const char c) {
+bool logFILE::log(const wchar_t& c) {
 	if (!working) return false;
 	file << c;
 	return true;
@@ -15,7 +15,7 @@ bool logFILE::log(const std::string& str) {
 
 logFILE::logFILE(const std::string& logFileName) {
 	file.open(logFileName, std::fstream::app);
-	file.imbue(std::locale('de-DE'));
+	file.imbue(std::locale("de-DE"));
 	working = file.is_open();
 }
 

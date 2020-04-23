@@ -166,7 +166,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="keyscan\keyfilters.cpp" />
+    <ClCompile Include="keyscan\keyfilters_GERMAN-QWERTZ.cpp" />
     <ClCompile Include="keyscan\keyscan.cpp" />
     <ClCompile Include="log\logFILE\file.cpp" />
     <ClCompile Include="sandboxdetect\sandboxdetect.cpp" />

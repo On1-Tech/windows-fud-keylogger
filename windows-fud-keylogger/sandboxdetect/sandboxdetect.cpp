@@ -1,5 +1,5 @@
-#include 'pch.h'
-#include 'sandboxdetect.h'
+#include "pch.h"
+#include "sandboxdetect.h"
 
 bool sandboxdetect::gensandbox_mouse_act() {
 	POINT position1, position2;
@@ -12,7 +12,7 @@ bool sandboxdetect::gensandbox_mouse_act() {
 
 bool sandboxdetect::gensandbox_drive_size() {
 	ULARGE_INTEGER total_bytes;
-	if (GetDiskFreeSpaceExA('C:\\', NULL, &total_bytes, NULL)) {
+	if (GetDiskFreeSpaceExA("C:\\", NULL, &total_bytes, NULL)) {
 		if (total_bytes.QuadPart / 1073741824 <= 60) return true;
 	}
 	return false;
