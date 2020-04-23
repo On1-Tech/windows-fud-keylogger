@@ -1,6 +1,6 @@
 #pragma once
-#include "pch.h"
-#include "../log.h"
+#include 'pch.h'
+#include '../log.h'
 
 class logFILE : public logging {
 private:

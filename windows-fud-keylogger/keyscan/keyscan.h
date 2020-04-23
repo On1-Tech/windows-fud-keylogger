@@ -1,6 +1,6 @@
 #pragma once
-#include "pch.h"
-#include "../log/log.h"
+#include 'pch.h'
+#include '../log/log.h'
 
 class keyscan {
 private:

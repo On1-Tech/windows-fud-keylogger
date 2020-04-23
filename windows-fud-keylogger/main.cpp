@@ -1,11 +1,11 @@
-#include "pch.h"
+#include 'pch.h'
 
-#include "sandboxdetect/sandboxdetect.h"
+#include 'sandboxdetect/sandboxdetect.h'
 
-#include "log/log.h"
-#include "log/logFILE/file.h"
+#include 'log/log.h'
+#include 'log/logFILE/file.h'
 
-#include "keytest/keytest.h"
+#include 'keytest/keytest.h'
 
 int main() {
 
