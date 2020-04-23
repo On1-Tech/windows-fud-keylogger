@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "keytest.h"
+#include "keyscan.h"
 
 //Log composer
 bool mainLog(int KEY) {

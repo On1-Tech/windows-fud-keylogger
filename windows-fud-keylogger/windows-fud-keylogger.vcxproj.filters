@@ -18,36 +18,36 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keytest\keytest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="keytest\keyfilters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sandboxdetect\sandboxdetect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="log\logFILE\logFILE.cpp">
+    <ClCompile Include="log\logFILE\file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="keyscan\keyfilters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="keyscan\keyscan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="keytest\keytest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sandboxdetect\sandboxdetect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\logFILE\logFILE.h">
+    <ClInclude Include="log\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\log.h">
+    <ClInclude Include="log\logFILE\file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keyscan\keyscan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
