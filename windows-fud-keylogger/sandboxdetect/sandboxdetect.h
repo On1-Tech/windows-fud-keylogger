@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 
 class sandboxdetect {
 private:
