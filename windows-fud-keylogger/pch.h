@@ -5,3 +5,5 @@
 #include <fstream>
 
 #include <windows.h>
+
+#include "settings.h"

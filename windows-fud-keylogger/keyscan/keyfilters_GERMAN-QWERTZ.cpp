@@ -5,10 +5,10 @@ bool keyscan::functional(const int& keycode) {
 	switch (keycode) {
 	//functional keys
 	case VK_RETURN:
-		m_logger->log("[return/enter]");
+		m_logger->log(L"[return/enter]");
 		return true;
 	case VK_BACK:
-		m_logger->log("[backspace]");
+		m_logger->log(L"[backspace]");
 		return true;
 	case VK_SHIFT:
 		return true;

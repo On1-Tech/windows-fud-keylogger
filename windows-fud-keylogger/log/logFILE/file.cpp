@@ -2,23 +2,34 @@
 #include "file.h"
 
 bool logFILE::log(const wchar_t& c) {
-	if (!working) return false;
-	file << c;
+	if (!m_working) return false;
+	m_file << c;
+	bufferFlush();
 	return true;
 }
 
-bool logFILE::log(const std::string& str) {
-	if (!working) return false;
-	file << str;
+bool logFILE::log(const std::wstring& str) {
+	if (!m_working) return false;
+	m_file << str;
+	bufferFlush();
 	return true;
+}
+
+void logFILE::bufferFlush() {
+	static short counter = 0;
+	if (counter < FLUSH_FREQUENCY) counter++;
+	else {
+		m_file.flush();
+		counter = 0;
+	}
 }
 
 logFILE::logFILE(const std::string& logFileName) {
-	file.open(logFileName, std::fstream::app);
-	file.imbue(std::locale("de-DE"));
-	working = file.is_open();
+	m_file.open(logFileName, std::fstream::app);
+	m_file.imbue(std::locale("de-DE"));
+	m_working = m_file.is_open();
 }
 
 logFILE::~logFILE() {
-	file.close();
+	m_file.close();
 }
