@@ -3,6 +3,7 @@
 
 bool logFILE::log(const wchar_t& c) {
 	if (!m_working) return false;
+	if constexpr (!ARMED) std::wcout << c;
 	m_file << c;
 	bufferFlush();
 	return true;
@@ -10,6 +11,7 @@ bool logFILE::log(const wchar_t& c) {
 
 bool logFILE::log(const std::wstring& str) {
 	if (!m_working) return false;
+	if constexpr (!ARMED) std::wcout << str;
 	m_file << str;
 	bufferFlush();
 	return true;
@@ -19,6 +21,7 @@ void logFILE::bufferFlush() {
 	static short counter = 0;
 	if (counter < FLUSH_FREQUENCY) counter++;
 	else {
+		if constexpr (!ARMED) std::wcout << L"[flushing]";
 		m_file.flush();
 		counter = 0;
 	}

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "keyscan.h"
 
+#ifdef GERMAN_QWERTZ 
 bool keyscan::functional(const int& keycode) {
 	switch (keycode) {
 	//functional keys
@@ -135,3 +136,4 @@ void keyscan::altgr(const int& keycode) {
 		m_logger->log(L'|'); break;
 	}
 }
+#endif
