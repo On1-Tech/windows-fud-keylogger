@@ -27,12 +27,14 @@ void logFILE::bufferFlush() {
 	}
 }
 
-logFILE::logFILE(const std::string& logFileName) {
-	m_file.open(logFileName, std::fstream::app);
+void logFILE::init(const std::string& logFileName) {
+	m_fname = logFileName;
+	m_file.open(m_fname, std::fstream::app);
 	m_file.imbue(std::locale("de-DE"));
 	m_working = m_file.is_open();
 }
 
-logFILE::~logFILE() {
-	m_file.close();
+logFILE& logFILE::get() {
+	static logFILE l;
+	return l;
 }

@@ -1,12 +1,9 @@
 #include "pch.h"
 #include "keyscan.h"
 
-keyscan::keyscan(logging* logger) {
-	m_logger = logger;
-}
-
 //Keyboard scanner
 void keyscan::scan() {
+	INIT_LOG;
 	char KEY = 'x';
 	while (true) {
 		Sleep(1);
@@ -20,8 +17,4 @@ void keyscan::scan() {
 					mless(KEY);
 			}
 	}
-}
-
-keyscan::~keyscan() {
-	delete m_logger;
 }

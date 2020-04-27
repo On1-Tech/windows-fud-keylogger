@@ -1,8 +1,7 @@
 #pragma once
 #include "pch.h"
-#include "../log.h"
 
-class logFILE : public logging {
+class logFILE {
 private:
 	std::wofstream m_file;
 	std::string m_fname;
@@ -12,8 +11,8 @@ private:
 	void bufferFlush();
 	
 public:
-	logFILE(const std::string& logFileName);
-	~logFILE() override;
-	bool log(const wchar_t& c) override;
-	bool log(const std::wstring& str) override;
+	static logFILE& get(); logFILE() = default;
+	void init(const std::string& logFileName);
+	bool log(const wchar_t& c);
+	bool log(const std::wstring& str);
 };

