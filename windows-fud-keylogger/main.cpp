@@ -13,5 +13,3 @@ int main() {
 	//will never be reached
 	return 1;
 }
-
-//TODO: transfer character interpretation to standalone program, saving only keycode and pressed modifiers to binary file

@@ -21,19 +21,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="log\logFILE\file.cpp">
+    <ClCompile Include="keytranslationsets\keyfilters_GERMAN-QWERTZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keyscan\keyscan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="infect_system\make_autostart\autostart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="log\log.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="keyscan\get6bitkeycode.cpp">
+    <ClCompile Include="translate\translate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,23 +32,11 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\logFILE\file.h">
+    <ClInclude Include="translate\translate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="keyscan\keyscan.h">
+    <ClInclude Include="keytranslationsets\keyfilters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="infect_system\make_autostart\autostart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log\log.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="infect_system\make_autostart\research.txt" />
   </ItemGroup>
 </Project>
