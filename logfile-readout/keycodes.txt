@@ -1,0 +1,17 @@
+0x00 FALSE OUTPUT
+0x01 unused
+0x02 unused
+0x03 - 0x0E OEM vks
+0x0F - 0x28 characters
+0x29 - 0x34 nums
+0x35 backspace
+0x36 return/enter
+0x37 window change
+0x38 space
+0x39 - 0x3E numpad keys (convert numbers to 0x0f-0x38)
+0x3F unused
+
+i | 0b00000000 -> normal, modless
+i | 0b01000000 -> shift
+i | 0b10000000 -> altgr
+i | 0b11000000 -> undefined

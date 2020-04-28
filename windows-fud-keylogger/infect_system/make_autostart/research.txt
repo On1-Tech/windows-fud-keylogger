@@ -1,0 +1,43 @@
+POSSIBLE METHODS FOR ADDING TO AUTOSTART
+https://www.fuzzysecurity.com/tutorials/19.html
+
+a way to change the signature would also be useful
+
+M1: - add to "run once" regKey execution
+	- duplicate to different folder with different name
+M2: - use schtasks to shedule on login execution
+	- duplicate to different folder and transfer control to copy
+	- copy should delete old (exe and schtasks) and readd the schedule
+M3, hard to implement, will result in huge exe, not guaranteed to work, possibly detected:
+	- find autostart executable
+	- copy binary and inject with malcode
+	- replace original with injected binary
+M4: - copy to different folder
+	- add link to copy in autostart folder
+	- remove old link from autostart
+M5, will result in SYSTEM access, high chance of detection without system level exploit:
+	- follow "WMI Permanent Event Subscription // Managed Object Formats (MOF)" on link above for instruction
+
+IDEA:
+with M1, M2, M4 implemented
+
+- EXE with parameters
+	run: will execute the keylogger
+	copy: will create copy of exe
+	persistence#: will trigger persistence adding technique #
+- steps of COPY:
+	parent:
+		1) generate new folder and file name (!only the names, no actions on disk)
+		2) copy itself into the tmp directory
+		3) execute the file in tmp, pass generated names in
+	tmp child:
+		1) create folder and generate new exe (possibly modify signature) with new name in that folder
+		2) exit
+	parent:
+		4) on exit of "tmp child" check if folder and filename exist
+			exist: goto parent#5
+			else: TBD
+		5) execute child with persistence#
+		6) check if child still exists
+			exists: execute child.run
+			else: goto parent#1 and use different persistence technique at step parent#5
