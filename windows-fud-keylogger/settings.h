@@ -6,3 +6,4 @@
 //general settings
 constexpr short FLUSH_FREQUENCY = 10;
 constexpr bool ARMED = false;
+constexpr short RUNTIME_MS = 10000;

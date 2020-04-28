@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "windows-fud-keylogger", "windows-fud-keylogger\windows-fud-keylogger.vcxproj", "{427F8881-DECA-411E-BCF6-077A3B6359B5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shell_start", "shell_start\shell_start.vcxproj", "{76275332-9EA4-44AB-A9F3-42D9B83F5316}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pe_infect", "pe-infect\pe-infect.vcxproj", "{76275332-9EA4-44AB-A9F3-42D9B83F5316}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

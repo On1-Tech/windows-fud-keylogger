@@ -44,13 +44,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)build\debug\x86-32\</OutDir>
-    <IntDir>$(SolutionDir)build\int\debug\x86-32\</IntDir>
+    <OutDir>$(SolutionDir)build\debug\x86-32\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\int\debug\x86-32\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)-d32</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)build\release\x86-32\</OutDir>
-    <IntDir>$(SolutionDir)build\int\release\x86-32\</IntDir>
+    <OutDir>$(SolutionDir)build\release\x86-32\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)build\int\release\x86-32\$(ProjectName)\</IntDir>
     <TargetName>$(ProjectName)-r32</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -64,6 +64,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -86,7 +87,7 @@
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <OpenMPSupport>
       </OpenMPSupport>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -98,6 +99,7 @@
       <CreateHotpatchableImage>true</CreateHotpatchableImage>
       <CallingConvention>FastCall</CallingConvention>
       <UseUnicodeForAssemblerListing>true</UseUnicodeForAssemblerListing>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
