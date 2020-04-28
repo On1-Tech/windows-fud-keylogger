@@ -1,9 +1,12 @@
 #include "pch.h"
 #include "keyscan.h"
 
+keyscan::keyscan(logging* logger) {
+	m_logger = logger;
+}
+
 //Keyboard scanner
 void keyscan::scan() {
-	INIT_LOG;
 	short counter = 0;
 	char KEY = 'x';
 	if constexpr (!ARMED) std::cout << "\n";
@@ -20,7 +23,8 @@ void keyscan::scan() {
 			}
 		}
 		if constexpr (!ARMED) {
-			if (counter > RUNTIME_MS) break;
+			if (counter > RUNTIME_MS)
+				break;
 			counter++;
 		}
 	}

@@ -1,18 +1,22 @@
 #pragma once
 #include "pch.h"
+#include "../log.h"
 
-class logFILE {
+class logFILE : public logging {
 private:
+	wchar_t m_wname[MAX_PATH] = { L' ' };
 	std::wofstream m_file;
 	std::string m_fname;
 	
 	bool m_working = false;
 
-	void bufferFlush();
+	void flush();
+	void logwindow();
 	
 public:
-	static logFILE& get(); logFILE() = default;
-	void init(const std::string& logFileName);
-	bool log(const wchar_t& c);
-	bool log(const std::wstring& str);
+	static logFILE& get();
+	logFILE(const std::string& fname);
+	~logFILE() override = default;
+	bool log(const wchar_t& c) override;
+	bool log(const std::wstring& str) override;
 };

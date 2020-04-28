@@ -33,6 +33,9 @@
     <ClCompile Include="infect_system\make_autostart\autostart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="log\log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -50,7 +53,7 @@
     <ClInclude Include="infect_system\make_autostart\autostart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\logdef.h">
+    <ClInclude Include="log\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

