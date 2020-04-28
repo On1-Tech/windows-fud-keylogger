@@ -15,7 +15,7 @@
     <ProjectGuid>{76275332-9ea4-44ab-a9f3-42d9b83f5316}</ProjectGuid>
     <RootNamespace>pe-infect</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>pe_infect</ProjectName>
+    <ProjectName>pe-infect</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -97,16 +97,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="autostart\addtoreg.cpp" />
+    <ClCompile Include="autostart\writereg.cpp" />
+    <ClCompile Include="example\example.cpp" />
     <ClCompile Include="load_pe_mem\loadpe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="sandboxdetect\sandboxdetect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="autostart\autostart.h" />
+    <ClInclude Include="example\example.h" />
+    <ClInclude Include="settings.h" />
     <ClInclude Include="load_pe_mem\loadpe.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="sandboxdetect\sandboxdetect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

