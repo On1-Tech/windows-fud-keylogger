@@ -27,12 +27,6 @@
     <ClCompile Include="keyscan\keyscan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="infect_system\make_autostart\autostart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="log\log.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="keyscan\get6bitkeycode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -47,12 +41,6 @@
     <ClInclude Include="keyscan\keyscan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="infect_system\make_autostart\autostart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="log\logFILE\file.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -62,8 +50,8 @@
     <ClInclude Include="settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="infect_system\make_autostart\research.txt" />
+    <ClInclude Include="log\log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

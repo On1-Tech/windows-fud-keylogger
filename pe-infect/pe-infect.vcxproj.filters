@@ -56,5 +56,11 @@
     <ClInclude Include="example\example.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="example\data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="autostart\research.txt" />
   </ItemGroup>
 </Project>

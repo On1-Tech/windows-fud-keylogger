@@ -10,6 +10,7 @@ private:
 	
 	std::ifstream binfile;
 	std::wofstream txtfile;
+	std::wstringstream wss;
 
 	bool writeComposer(const modifier& mod, int keycode);
 	uint8_t readNextByte();

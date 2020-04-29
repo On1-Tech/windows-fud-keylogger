@@ -3,7 +3,6 @@
 
 bool logFILE::log(const uint8_t& i) {
 	if (!m_working) return false;
-	if (m_working && updateFocusedWindow()) m_file << WCHANGECODE;
 	m_file << i;
 	flush();
 	return true;
