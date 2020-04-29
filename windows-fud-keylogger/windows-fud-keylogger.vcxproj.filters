@@ -53,5 +53,8 @@
     <ClInclude Include="log\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="keyscan\supported_keys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="keyscan\keyscan.h" />
+    <ClInclude Include="keyscan\supported_keys.h" />
     <ClInclude Include="log\log.h" />
     <ClInclude Include="log\logFILE\file.h" />
     <ClInclude Include="pch.h" />

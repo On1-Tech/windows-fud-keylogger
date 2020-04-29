@@ -6,6 +6,7 @@ void keysets::german_qwertz::functional(const int& keycode, std::wstring& ws) {
 	//functional keys
 	case VK_RETURN: ws = L"[return/enter]"; break;
 	case VK_BACK: ws = L"[backspace]"; break;
+	case VK_SPACE: ws = L" "; break;
 	default: break;
 	}
 }
