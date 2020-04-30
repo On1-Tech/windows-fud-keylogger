@@ -43,6 +43,8 @@ uint8_t translator::readNextByte() {
 }
 
 int translator::toKeycode(uint8_t i) {
+	i &= 0b00111111;
+	
 	switch (i) {
 	case 0x35: return VK_BACK;
 	case 0x36: return VK_RETURN;

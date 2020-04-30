@@ -7,4 +7,4 @@
 #include <Windows.h> // WinAPI Header
 #include <TlHelp32.h> //WinAPI Process API
 
-#include "settings.h"
+#include "../settings.h"

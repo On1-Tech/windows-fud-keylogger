@@ -2,5 +2,5 @@
 #include "example/example.h"
 
 int main() {
-	return example::start();
+	example::start();
 }
