@@ -1,6 +1,8 @@
 #pragma once
+
 #include "pch.h"
 #include "log/log.h"
+#include "supported_keys.h"
 
 class keyscan {
 private:

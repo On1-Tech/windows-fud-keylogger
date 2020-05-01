@@ -1,0 +1,2 @@
+"../../bin2hex.exe" --i "../../build/release/x86-32/windows-fud-keylogger/windows-fud-keylogger-r32.exe" --o keylogger-hex.txt
+"../../bin2hex.exe" --i "../../build/release/x86-32/pe-infect/pe-infect-r32.exe" --o peinfect-hex.txt

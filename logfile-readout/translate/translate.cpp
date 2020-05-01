@@ -13,12 +13,11 @@ bool translator::writeComposer(const modifier& mod, int keycode) {
 	using namespace keysets::german_qwertz;
 	std::wstring ws;
 	wchar_t wc = '\0';
-
-	if (keycode == VK_WINDOWCHANGE) ws = L"\n[window refocus]\t";
 	
 	functional(keycode, ws);
 	if (!ws.empty()) {
 		write(ws);
+		wss << ws;
 		return true;
 	}
 	switch (mod) {
@@ -30,6 +29,7 @@ bool translator::writeComposer(const modifier& mod, int keycode) {
 
 	if (wc != '\0') {
 		write(wc);
+		wss << wc;
 		return true;
 	}
 	
@@ -43,10 +43,11 @@ uint8_t translator::readNextByte() {
 }
 
 int translator::toKeycode(uint8_t i) {
+	i &= 0b00111111;
+	
 	switch (i) {
 	case 0x35: return VK_BACK;
 	case 0x36: return VK_RETURN;
-	case 0x37: return VK_WINDOWCHANGE;
 	case 0x38: return VK_SPACE;
 	case 0x39: return VK_MULTIPLY;
 	case 0x3A: return VK_ADD;
@@ -86,9 +87,13 @@ translator::modifier translator::getMod(uint8_t i) {
 
 translator::translator(const std::string& binfname, const std::string& txtfname) {
 	binfile.open(binfname, std::ios::binary);
-	if (!binfile.is_open()) return;
+	if (!binfile.is_open()) {
+		return;
+	}
 	txtfile.open(txtfname);
-	if (!txtfile.is_open()) { binfile.close(); return; }
+	if (!txtfile.is_open()) {
+		binfile.close(); return;
+	}
 
 	uint8_t b = readNextByte();
 	while (b != 0x00) {
@@ -97,4 +102,8 @@ translator::translator(const std::string& binfname, const std::string& txtfname)
 		writeComposer(m, c);
 		b = readNextByte();
 	}
+
+	binfile.close(); txtfile.close();
+	std::wcout << "RES: " << wss.str() << std::endl;
+	std::cin.get();
 }

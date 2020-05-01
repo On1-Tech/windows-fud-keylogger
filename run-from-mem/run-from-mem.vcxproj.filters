@@ -21,13 +21,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="log\logFILE\file.cpp">
+    <ClCompile Include="load_pe_mem\loadpe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keyscan\keyscan.cpp">
+    <ClCompile Include="example\example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="keyscan\get6bitkeycode.cpp">
+    <ClCompile Include="sandboxdetect\sandboxdetect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,25 +35,19 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\logFILE\file.h">
+    <ClInclude Include="load_pe_mem\loadpe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="keyscan\keyscan.h">
+    <ClInclude Include="example\data-keylogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="log\logFILE\file.h">
+    <ClInclude Include="example\data-peinfect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="keyscan\keyscan.h">
+    <ClInclude Include="example\example.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="settings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="log\log.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="keyscan\supported_keys.h">
+    <ClInclude Include="sandboxdetect\sandboxdetect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
