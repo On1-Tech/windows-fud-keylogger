@@ -11,9 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "autostart", "autostart\auto
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "startup-loader", "startup-loader\startup-loader.vcxproj", "{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "inimod", "inimod", "{9A83FDE3-628C-4E67-8FA2-822B2101ACEB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1C93E79C-4B16-4512-81A9-FC6171937D7A}"
 	ProjectSection(SolutionItems) = preProject
-		inimodule\inimod.h = inimodule\inimod.h
+		filetest.h = filetest.h
+		settings.h = settings.h
 	EndProjectSection
 EndProject
 Global

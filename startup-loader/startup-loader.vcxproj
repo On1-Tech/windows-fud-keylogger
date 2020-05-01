@@ -96,7 +96,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="installer\create-structure.cpp" />
+    <ClCompile Include="installer\installer.cpp" />
     <ClCompile Include="memory-load\loadpe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -108,6 +108,7 @@
   <ItemGroup>
     <ClInclude Include="data\data-keylogger.h" />
     <ClInclude Include="data\data-autostart.h" />
+    <ClInclude Include="installer\installer.h" />
     <ClInclude Include="memory-load\loadpe.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="sandboxdetect\sandboxdetect.h" />

