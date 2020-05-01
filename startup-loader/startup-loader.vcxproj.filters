@@ -21,13 +21,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="example\example.cpp">
+    <ClCompile Include="sandboxdetect\sandboxdetect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="autostart\writereg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="autostart\addtoreg.cpp">
+    <ClCompile Include="memory-load\loadpe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,14 +32,17 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="autostart\autostart.h">
+    <ClInclude Include="sandboxdetect\sandboxdetect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="example\example.h">
+    <ClInclude Include="data\data-keylogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="autostart\research.txt" />
+    <ClInclude Include="data\data-autostart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory-load\loadpe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

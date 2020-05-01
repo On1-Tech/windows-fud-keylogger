@@ -21,6 +21,7 @@ HANDLE loadpe::loadFile(const LPCSTR& filename) {
 
 		return Memblock;
 	}
+	
 	return 0;
 }
 

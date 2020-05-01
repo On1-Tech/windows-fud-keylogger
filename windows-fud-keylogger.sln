@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "windows-fud-keylogger", "windows-fud-keylogger\windows-fud-keylogger.vcxproj", "{427F8881-DECA-411E-BCF6-077A3B6359B5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pe-infect", "pe-infect\pe-infect.vcxproj", "{76275332-9EA4-44AB-A9F3-42D9B83F5316}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "logfile-readout", "logfile-readout\logfile-readout.vcxproj", "{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "run-from-mem", "run-from-mem\run-from-mem.vcxproj", "{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "autostart", "autostart\autostart.vcxproj", "{76275332-9EA4-44AB-A9F3-42D9B83F5316}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "startup-loader", "startup-loader\startup-loader.vcxproj", "{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,18 +25,18 @@ Global
 		{427F8881-DECA-411E-BCF6-077A3B6359B5}.Release|x64.ActiveCfg = Release|Win32
 		{427F8881-DECA-411E-BCF6-077A3B6359B5}.Release|x86.ActiveCfg = Release|Win32
 		{427F8881-DECA-411E-BCF6-077A3B6359B5}.Release|x86.Build.0 = Release|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x64.ActiveCfg = Debug|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x86.ActiveCfg = Debug|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x86.Build.0 = Debug|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x64.ActiveCfg = Release|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x86.ActiveCfg = Release|Win32
-		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x86.Build.0 = Release|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Debug|x64.ActiveCfg = Debug|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Debug|x86.ActiveCfg = Debug|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Debug|x86.Build.0 = Debug|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Release|x64.ActiveCfg = Release|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Release|x86.ActiveCfg = Release|Win32
 		{BB6D5AE4-30D6-4059-88C9-6A3FC69833B5}.Release|x86.Build.0 = Release|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x64.ActiveCfg = Debug|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x86.ActiveCfg = Debug|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Debug|x86.Build.0 = Debug|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x64.ActiveCfg = Release|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x86.ActiveCfg = Release|Win32
+		{76275332-9EA4-44AB-A9F3-42D9B83F5316}.Release|x86.Build.0 = Release|Win32
 		{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}.Debug|x64.ActiveCfg = Debug|x64
 		{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}.Debug|x64.Build.0 = Debug|x64
 		{B72BEDFE-B54E-4E88-B832-56E6F6EECE52}.Debug|x86.ActiveCfg = Debug|Win32
